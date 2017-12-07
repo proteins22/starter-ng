@@ -1,0 +1,39 @@
+<mat-list role="list">
+	<mat-list-item role="listitem">
+		<button mat-button routerLink="/">
+			<span> Home </span>
+		</button>
+	</mat-list-item>
+
+	<mat-list-item role="listitem">
+		<button  mat-button routerLink="/about" mat-button [matMenuTriggerFor]="aboutMenu">
+			<span> About </span>
+		</button>
+		<mat-menu #aboutMenu="matMenu" xPosition="before" [overlapTrigger]="false">
+			<button mat-menu-item> About </button>
+			<button mat-menu-item> About2 </button>
+			<button mat-menu-item> About3 </button>
+		</mat-menu>
+	</mat-list-item>
+
+	<mat-list-item role="listitem">
+		<button  mat-button routerLink="/contact" mat-button [matMenuTriggerFor]="rootMenu">
+		  <span> Contact </span>
+		</button>
+		<mat-menu #rootMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+			<button mat-menu-item [matMenuTriggerFor]="subMenu">Power</button>
+			<button mat-menu-item>System settings</button>
+		</mat-menu>
+
+		<mat-menu #subMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+			<button mat-menu-item>Shut down</button>
+			<button mat-menu-item>Restart</button>
+			<button mat-menu-item>Hibernate</button>
+		</mat-menu>
+	</mat-list-item>
+
+</mat-list>
+
+
+
+	
